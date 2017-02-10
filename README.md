@@ -12,7 +12,7 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 1. Set the input and output directory. Make sure your working directory has a folder *dataset* containing all necessary files
 
 	```R
-	## set the path containing input dataset and output
+	## set the path containing input and output dataset
 	dirin <- paste0(getwd(), "/dataset")
 	dirout <- paste0(getwd(), "/output")
 	```
