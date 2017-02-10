@@ -12,7 +12,7 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 1. Download the data [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder and keep the file names AS-IS
 2. Open the script *run_analysis.R* in RStudio or a text editor, make sure the *dirin* variable is point to the extracted folder in step 1, the *dirout* for the output dataset after cleaning
 
-	```
+	```R
 		dirin <-"yourpath/dataset"
 		dirout <- "yourpath/output"
 	```
