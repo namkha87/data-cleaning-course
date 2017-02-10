@@ -11,14 +11,18 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 ## How to use it?
 1. Download the data at [link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it and keep the file names AS-IS
 2. Open the script *run_analysis.R* in RStudio or a text editor, make sure the *dirin* variable is point to the extracted folder in step 1, the *dirout* for the output dataset after cleaning
+
 	```
 		dirin <-"yourpath/dataset"
 		dirout <- "yourpath/output"
 	```
+	
 3. Open the script *run_analysis.R* in RStudio and run:
+
 	```
 		source("yourpath/run_analysis.R")
 	```
+	
 4. Verify if there are 2 below csv files generated in the output folder:
  - *merged.csv*: for the 1st-4th requirement
  - *mean_by_activity_subject.csv*: for the 5th requirement
