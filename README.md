@@ -13,8 +13,8 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 
 	```R
 	## set the path containing input dataset and output
-	dirin <-"c:/Code/Coursera/data-cleaning/project/dataset"
-	dirout <- "c:/Code/Coursera/data-cleaning/project/output"
+	dirin <- paste0(getwd(), "/dataset")
+	dirout <- paste0(getwd(), "/output")
 	```
 
 2. Read the *activity_labels.txt* for descriptive activity names
@@ -97,19 +97,12 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 	
 ## How to connect it?
 1. Download the data at [link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder "dataset" in your working directory and keep the file names AS-IS
-2. Open the script *run_analysis.R* in RStudio or a text editor, make sure the *dirin* variable is point to the extracted folder in step 1, the *dirout* for the output dataset after cleaning
+2. Open the script *run_analysis.R* in RStudio and run:
 
 	```R
-		dirin <-"yourpath/dataset"
-		dirout <- "yourpath/output"
+	source("run_analysis.R")
 	```
 	
-3. Open the script *run_analysis.R* in RStudio and run:
-
-	```R
-		source("yourpath/run_analysis.R")
-	```
-	
-4. Verify if there are 2 below txt files generated in the "output" folder in working directory:
+4. Verify if there are 2 below txt files generated in the *output* folder in working directory:
  - *merged.txt*: for the 1st-4th requirement
  - *mean_by_activity_subject.txt*: for the 5th requirement
