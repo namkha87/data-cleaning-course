@@ -7,6 +7,18 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+	
+## How to run it?
+1. Download the data [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder "dataset" in your working directory and keep the file names AS-IS
+2. Open the script *run_analysis.R* in RStudio and run:
+
+	```R
+	source("run_analysis.R")
+	```
+	
+3. Verify if there are 2 below txt files generated in the *output* folder in working directory:
+ - *merged.txt*: for the 1st-4th requirement
+ - *mean_by_activity_subject.txt*: for the 5th requirement
 
 ## How does it work?
 1. Set the input and output directory. Make sure your working directory has a folder *dataset* containing all necessary files
@@ -94,15 +106,3 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 	write.table(merged, paste0(dirout, "/merged.txt"), row.names = F)
 	write.table(meanmerged, paste0(dirout, "/mean_by_activity_subject.txt"), row.names = F)
 	```
-	
-## How to connect it?
-1. Download the data [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder "dataset" in your working directory and keep the file names AS-IS
-2. Open the script *run_analysis.R* in RStudio and run:
-
-	```R
-	source("run_analysis.R")
-	```
-	
-4. Verify if there are 2 below txt files generated in the *output* folder in working directory:
- - *merged.txt*: for the 1st-4th requirement
- - *mean_by_activity_subject.txt*: for the 5th requirement
