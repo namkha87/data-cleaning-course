@@ -45,7 +45,9 @@ The complete list of variables
   - STANDING
   - LAYING
 2. subjectid
-An integer number to identify the person performing activities
+
+  An integer number to identify the person performing activities
+
 3. tBodyAcc-mean()-X
 4. tBodyAcc-mean()-Y
 5. tBodyAcc-mean()-Z
