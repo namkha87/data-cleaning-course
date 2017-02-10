@@ -9,7 +9,7 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 	
 ## How to run it?
-1. Download the data [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder "dataset" in your working directory and keep the file names AS-IS
+1. Download the data [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder *dataset* in your working directory and keep the file names AS-IS
 2. Open the script *run_analysis.R* in RStudio and run:
 
 	```R
