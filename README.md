@@ -9,7 +9,7 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ## How does it work?
-1. Manage the input and output directory using 2 variables
+1. Set the input and output directory. Make sure your working directory has a folder *dataset* containing all necessary files
 
 	```R
 	## set the path containing input dataset and output
@@ -96,7 +96,7 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 	```
 	
 ## How to connect it?
-1. Download the data at [link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it and keep the file names AS-IS
+1. Download the data at [link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder "dataset" in your working directory and keep the file names AS-IS
 2. Open the script *run_analysis.R* in RStudio or a text editor, make sure the *dirin* variable is point to the extracted folder in step 1, the *dirout* for the output dataset after cleaning
 
 	```R
@@ -110,6 +110,6 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 		source("yourpath/run_analysis.R")
 	```
 	
-4. Verify if there are 2 below txt files generated in the output folder:
+4. Verify if there are 2 below txt files generated in the "output" folder in working directory:
  - *merged.txt*: for the 1st-4th requirement
  - *mean_by_activity_subject.txt*: for the 5th requirement
