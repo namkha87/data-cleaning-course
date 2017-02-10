@@ -2,8 +2,8 @@
 ## please keep the file names AS-IS after extracting
 
 ## set the path containing input dataset and output
-dirin <-"c:/Code/Coursera/data-cleaning/project/dataset"
-dirout <- "c:/Code/Coursera/data-cleaning/project/output"
+dirin <- paste0(getwd(), "/dataset")
+dirout <- paste0(getwd(), "/output")
 
 ## read the activity labels
 activitylabels <- read.table(paste0(dirin, "/activity_labels.txt"), header= F)
