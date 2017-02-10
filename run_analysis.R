@@ -10,7 +10,7 @@ activitylabels <- read.table(paste0(dirin, "/activity_labels.txt"), header= F)
 
 ## read features
 f <- read.table(paste0(dirin, "/features.txt"), header= F)
-f <- f[grep("mean\\(\\)", f[, 2]), ]
+f <- f[grep("mean\\(\\)|std\\(\\)", f[, 2]), ]
 features <- data.frame(id = f[, 1], featureName = f[, 2])
 
 ## read the train dataset
@@ -37,9 +37,9 @@ mergeDataset <- function (x, y, subject) {
     # also add the test subject to dataset
     x$subjectid <- subject
     
-    # x now contains 35 columns dataset: 33 existing variables + 2 new columns
+    # x now contains 68 columns dataset: 66 existing variables + 2 new columns
     # we will reorder columns a little bit: 2 new columns move to first
-    x[, c(34, 35, 1:33)]
+    x[, c(67, 68, 1:66)]
 }
 
 ## now we merge each test set and train set
@@ -50,11 +50,11 @@ mergedtrain <- mergeDataset(xtrain, ytrain, subtrain)
 merged <- rbind(mergedtest, mergedtrain)
 
 ## finally 5th requirement
-meanmerged <- aggregate(x = merged[, 3:35], by = list(activity = merged$activity, subjectid = merged$subjectid), FUN = mean)
+meanmerged <- aggregate(x = merged[, 3:68], by = list(activity = merged$activity, subjectid = merged$subjectid), FUN = mean)
 
 ## create the output directory if not exist
 if (!dir.exists(dirout)) dir.create(dirout)
 
 ## write the output
-write.csv(merged, paste0(dirout, "/merged.csv"), row.names = F)
-write.csv(meanmerged, paste0(dirout, "/mean_by_activity_subject.csv"), row.names = F)
+write.table(merged, paste0(dirout, "/merged.txt"), row.names = F)
+write.table(meanmerged, paste0(dirout, "/mean_by_activity_subject.txt"), row.names = F)
