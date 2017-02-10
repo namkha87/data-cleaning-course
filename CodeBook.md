@@ -38,14 +38,13 @@ The set of variables that were estimated from these signals are:
 The complete list of variables
 =================
 1. activity
-  - 1 WALKING
+  - WALKING
   - WALKING_UPSTAIRS
   - WALKING_DOWNSTAIRS
   - SITTING
   - STANDING
   - LAYING
 2. subjectid
-
   An integer number to identify the person performing activities
 3. tBodyAcc-mean()-X
 4. tBodyAcc-mean()-Y
