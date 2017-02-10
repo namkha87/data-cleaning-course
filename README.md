@@ -96,7 +96,7 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 	```
 	
 ## How to connect it?
-1. Download the data at [link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder "dataset" in your working directory and keep the file names AS-IS
+1. Download the data [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Dataset"). Extract it to a folder "dataset" in your working directory and keep the file names AS-IS
 2. Open the script *run_analysis.R* in RStudio and run:
 
 	```R
