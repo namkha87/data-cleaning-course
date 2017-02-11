@@ -35,12 +35,19 @@ The purpose of this script is to demonstrate the ability to collect, work with, 
 	activitylabels <- read.table(paste0(dirin, "/activity_labels.txt"), header= F)
 	```
 
-3. Read the *features.txt*, then filter out variables measurements on the mean and standard deviation for each measurement by using regular expression. There are 66 variables matched the condition
+3. Read the *features.txt*, then filter out variables measurements on the mean and standard deviation for each measurement by using regular expression. There are 66 variables matched the condition. We also will rename the variables to make them more descriptive
 	
 	```R
 	f <- read.table(paste0(dirin, "/features.txt"), header= F)
 	f <- f[grep("mean\\(\\)|std\\(\\)", f[, 2]), ]
 	features <- data.frame(id = f[, 1], featureName = f[, 2])
+	
+	## set descriptive label for variables
+	features$featureName <- sub("^t", "time", features$featureName)
+	features$featureName <- sub("^f", "freq", features$featureName)
+	features$featureName <- gsub("mean\\(\\)", "Mean", features$featureName)
+	features$featureName <- gsub("std\\(\\)", "Std", features$featureName)
+	features$featureName <- gsub("-", "", features$featureName)
 	```
 	
 4. Read the train and test dataset into memory
