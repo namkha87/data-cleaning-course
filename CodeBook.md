@@ -44,7 +44,7 @@ The complete list of variables
   - SITTING
   - STANDING
   - LAYING
-2. subjectid
+2. subjectId
 
   An integer number to identify the person performing activities
   
