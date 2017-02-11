@@ -13,6 +13,13 @@ f <- read.table(paste0(dirin, "/features.txt"), header= F)
 f <- f[grep("mean\\(\\)|std\\(\\)", f[, 2]), ]
 features <- data.frame(id = f[, 1], featureName = f[, 2])
 
+## set descriptive label for variables
+features$featureName <- sub("^t", "time", features$featureName)
+features$featureName <- sub("^f", "freq", features$featureName)
+features$featureName <- gsub("mean\\(\\)", "Mean", features$featureName)
+features$featureName <- gsub("std\\(\\)", "Std", features$featureName)
+features$featureName <- gsub("-", "", features$featureName)
+
 ## read the train dataset
 subtrain <- read.table(paste0(dirin, "/train/subject_train.txt"), header= F)[, 1]
 xtrain <- read.table(paste0(dirin, "/train/X_train.txt"), header= F)
@@ -35,7 +42,7 @@ mergeDataset <- function (x, y, subject) {
     x$activity <- sapply(y, function (lblId) { activitylabels[lblId, 2] })
     
     # also add the test subject to dataset
-    x$subjectid <- subject
+    x$subjectId <- subject
     
     # x now contains 68 columns dataset: 66 existing variables + 2 new columns
     # we will reorder columns a little bit: 2 new columns move to first
@@ -50,7 +57,7 @@ mergedtrain <- mergeDataset(xtrain, ytrain, subtrain)
 merged <- rbind(mergedtest, mergedtrain)
 
 ## finally 5th requirement
-meanmerged <- aggregate(x = merged[, 3:68], by = list(activity = merged$activity, subjectid = merged$subjectid), FUN = mean)
+meanmerged <- aggregate(x = merged[, 3:68], by = list(activity = merged$activity, subjectId = merged$subjectId), FUN = mean)
 
 ## create the output directory if not exist
 if (!dir.exists(dirout)) dir.create(dirout)
